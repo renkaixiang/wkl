@@ -1,0 +1,158 @@
+
+
+.sss{
+	width: 100vw;
+	height: 100vh;
+	background-color:##091426;
+}
+header{
+	width:100%;
+	height:2rem;
+	background:url(../images/ljc_1.png);
+	background-repeat: repeat-x;
+	display: block;
+}
+header>left{
+	color:white;
+	font-size: 0.8rem;
+	margin-top:0.5rem;
+	margin-left:1.2rem;
+	display: block;
+	float: left;
+}
+header>right>p{
+	display: block;
+	font-size: 1.2rem;
+	margin-top:0.2rem;
+	margin-right:1.2rem;
+	float: right;
+	color:white;
+}
+header>right>ul{
+	width:6.15rem;
+	height:11.15rem;
+	background-color: white;
+	position: absolute;
+	top:2.1rem;
+	right:0.45rem;
+	border-radius: 0.225rem;
+	-display: none;
+}
+header>right>ul>li{
+	width:6.15rem;
+	height:2.25rem;
+	font-size: 0.7rem;
+	color:#6a82a5;
+	list-style: none;
+	line-height: 2.25rem;
+	padding-left:1rem;
+}
+center{
+	width:16rem;
+	height:2.25rem;
+	background-color: #069b8b;
+	/*position: absolute;
+	top:2.1rem;
+	right:0.45rem;
+	border-radius: 0.225rem;*/
+	-display: none;	
+}
+center>li{
+	display: block;
+	width:auto;
+	height:2.25rem;
+	font-size: 0.7rem;
+	float: left;
+	color: #FFFFFF;
+	list-style: none;
+	line-height: 2.25rem;
+	padding:0 0.7rem;
+}
+active{
+	display: block;
+	width:14.5rem;
+	height:9rem;
+	background-color: #eeebeb;
+	margin:1rem auto;
+	z-index: 1;
+	border-radius: 0.225rem;
+	border:0.025rem solid #999797;
+	overflow: hidden;
+}
+active>ul>p{
+	width:100%;
+	height:2rem;
+	color:#000000;
+	font-size:0.7rem;
+	line-height: 2rem;
+	font-weight: bold;
+	margin-top:0.025rem;
+	border-bottom: 0.025rem solid #d0cccc;
+	background-color:#ccc8c8;
+}
+active>ul>li{
+	width:13rem;
+	height:1.5rem;
+	line-height: 1.5rem;
+	border-bottom: 0.025rem solid #d0cccc;
+	padding-left: 1rem;
+	margin-left:1rem;
+}
+seacetive{
+	width:14.5rem;
+	height:auto;
+	background-color: #eeebeb;
+	margin:0 auto;
+	z-index: 1;
+	display: block;
+}
+seacetive>a{
+	display: block;
+	width:6.75rem;
+	height:3.35rem;
+	background-color: blueviolet;
+	color:white;
+	float: left;
+	font-size: 0.7rem;
+	text-align: center;
+	line-height: 3.35rem;
+	border-radius: 5px;
+}
+seacetive>a:nth-child(2){
+	margin-left:1rem;
+	background-color: red;
+}
+seacetive>a:nth-child(3){
+	margin-top:1rem;
+	background-color: pink;
+}
+seacetive>a:nth-child(4){
+	margin-left:1rem;
+	margin-top:1rem;
+	background-color:greenyellow;
+}
+footer{
+	width:100%;
+	height:2rem;
+	background:url(../images/ljc_1.png);
+	background-repeat: repeat-x;
+	display: block;
+	position: fixed;
+	bottom: 0;
+}
+footer>a{
+	display: block;
+	width:3rem;
+	height:2rem;
+	font-size: 0.7rem;
+	line-height: 2rem;
+	color:white;
+}
+footer>a:nth-child(1){
+	margin-left:1rem;
+	float: left;
+}
+footer>a:nth-child(2){
+	margin-right:1rem;
+	float: right;
+}

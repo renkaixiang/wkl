@@ -1,0 +1,221 @@
+
+			*{
+				margin:0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+				box-sizing: border-box;
+			}
+body{
+	/*background-color:#091426;*/
+}
+header{
+	width:100%;
+	height:2rem;
+	background:url(../images/ljc_1.png);
+	background-repeat: repeat-x;
+	display: block;
+	position: relative;
+}
+header>left{
+	color:white;
+	font-size: 0.8rem;
+	margin-top:0.5rem;
+	margin-left:1.2rem;
+	display: block;
+	float: left;
+}
+header>right>p{
+	display: block;
+	font-size: 1.2rem;
+	margin-top:0.2rem;
+	margin-right:1.2rem;
+	float: right;
+	color:white;
+}
+header>right>div{
+	width:6.15rem;
+	height:auto;
+background:url(../images/ljc_1.png);
+	position: absolute;
+	top:2.1rem;
+	right:0.45rem;
+	border-radius: 0.225rem;
+	-display: none;
+	z-index: 9999;
+}
+header>right>div>li{
+	text-align: center;
+	width:100%;
+	height:2.25rem;
+	font-size: 0.7rem;
+	color:white;
+	list-style: none;
+	line-height: 2.25rem;
+	font-weight: bold;
+}
+#box{
+	width:100%;height:2.5rem;background:#F0AD4E;position: relative;
+}
+#box>input{
+	
+	display: block;outline: none;position: absolute;
+	top: 0;left: 0;bottom: 0;right: 0;margin: auto;
+	width: 7rem;height: 1.52rem;
+}
+
+			/*.L_header{
+				width: 100vw;
+				height:2rem;
+				line-height: 2rem;
+				text-align: center;
+				background: #1B6D85;
+				font-size: 1rem;
+				color:#FFFFFF;
+			}*/
+			.L_spxx{
+				width: 100%;
+				height: 100%;
+				float: left;
+				margin-bottom: 2rem;
+				/*margin-top:0.5rem;*/
+				
+			}
+			.L_left{
+				float:left;
+				width:4.5rem;
+				height: auto;
+			}
+			.L_left ul li{
+				padding-left: 0.5rem;
+				width: 4rem;
+                height: 2.7rem;
+                color:#101010;
+                line-height:2rem;
+                text-align: center;
+			}
+			.L_r{
+				float:left;
+				width: 11rem;
+				overflow: hidden;
+			}
+			.L_right{
+				width: 12rem;
+				height: auto;
+				float:left;
+				margin: 0;
+				position: relative;
+				overflow: hidden;
+				/*margin-left:1rem;*/
+				/*border:1px solid  #F0AD4E;*/
+			}
+			.L_right ul{
+				width:3.67rem;
+				float:left;
+				height: auto;
+				/*position: relative;*/
+				overflow: hidden;
+			}
+			.L_right ul li{
+				width: 3.67rem;
+                height: 2.7rem;
+                line-height:2rem;
+                color:#31708F;
+                text-align: center;
+                box-sizing: border-box;
+			}
+			.L_right ul li:nth-child(8){
+				height: 1.5rem;
+			}
+			.L_right ul li:nth-child(9){
+				height: 1.5rem;
+			}
+			/*.fenye{
+				height: 100%;
+				float:right;
+				line-height: 1.3rem;
+				margin-top: 0.1rem;
+				margin-right: 0.3rem;
+				padding-left: 0.1rem;
+			}*/
+			.fenye input{
+				float: left;
+			}
+			#button{
+				width: 24%;
+				height: 100%;
+				border: 0;
+				padding: 0;
+				margin: 0;
+				background: url(../images/ljc_1.png);
+				outline: none;
+			}
+			.dibu>input{
+				width: 24%;
+				height: 100%;
+				border: 0;
+				padding: 0;
+				margin: 0;
+				background: url(../images/ljc_1.png);
+				outline: none;
+			}
+			#shangyiye{
+				width: 24%;
+			}	
+			#xiayiye{
+				width: 24%;
+			}
+				
+			
+			/*.L_bj{
+				width: 100%;
+				height:1rem;
+				background:#31708F;
+				padding-left: 0.5rem;
+			}
+			.L_bj span{
+				width:5rem;
+				height: 1rem;
+				color:#000000;
+				display: inline-block;
+				border:1px solid #F1EFF0;
+				text-align: center;
+			}
+			.L_bj>p{
+				width: 100%;
+				height: 2rem;
+				background: red;
+				line-height: 2rem;
+			}*/
+			
+			
+			/*.L_cx{
+				width:100%;
+				height:2rem;
+				background:#D58512;
+				margin-top: 0.3rem;
+			}
+			.L_inp{
+				width: 9rem;
+				height: 2rem;
+				background: red;
+				float:left;
+			}
+			.L_inp>input{
+				width:100%;
+				height:1.5rem;
+				border:1px solid darkgray;
+			}
+			.L_bu{
+				width: 3rem;
+				height: 2rem;
+				background: #0F0F0F;
+				float:left;
+			}
+			.L_bu>button{
+				width:100%;
+				height:1.5rem;
+				border:1px solid #66AFE9;
+				/*background: #3385ff;*
+			/*}*/

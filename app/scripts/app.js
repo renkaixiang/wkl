@@ -9,7 +9,8 @@
  * Main module of the application.
  */
 angular
-	.module('wangkelongApp', ['ui.router']).config(function($urlRouterProvider, $stateProvider) {
+	.module('wangkelongApp',["ui.router"]).config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
+		$urlRouterProvider.when("", "/dengru")
 		$stateProvider.state('dengru', {
 			url: "/dengru",
 			templateUrl: "views/dengru.html"
@@ -18,9 +19,17 @@ angular
 			url: "/zhuye",
 			templateUrl: "views/zhuye.html"
 		})
+		.state('zhuye2', {
+			url: "/zhuye2",
+			templateUrl: "views/zhuye2.html"
+		})
 		.state('dingdan', {
 			url: "/dingdan",
 			templateUrl: "views/dingdan.html"
+		})
+		.state('dingdan2', {
+			url: "/dingdan2",
+			templateUrl: "views/dingdan2.html"
 		})
 		.state('ruku', {
 			url: "/ruku",
@@ -34,5 +43,8 @@ angular
 			url: "/tianjia",
 			templateUrl: "views/tianjia.html"
 		})
-		$urlRouterProvider.when("", "/dengru")
-	});
+		.state('xiugai', {
+			url: "/xiugai",
+			templateUrl: "views/xiugai.html"
+		})
+	}])

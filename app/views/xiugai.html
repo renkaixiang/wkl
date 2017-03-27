@@ -1,0 +1,61 @@
+<div ng-controller="xiugai">
+	<!--head-->
+	<div class="Ln-Head">
+		<div class="Ln-Left">
+			<a href="javascript:;" ng-click="st()"><img src="images/ljc_3.png"/></a>
+			编辑
+		</div>
+	</div>
+	<!--body-->
+	<ul class="Ln-list">
+		<li>
+			<div class="Ln_box">
+				<input class="Ln_address" placeholder="未设置" ng-model="spmc" />
+				<p class="Ln_name">商品名称</p>
+			</div>
+		</li>
+		<li>
+			<div class="Ln_box">
+				<input class="Ln_address" placeholder="未设置" ng-model="djbh" />
+				<p class="Ln_name">单据编号</p>
+			</div>
+			<img src="images/Ln_more.jpg" class="Ln_more" />
+		</li>
+		<li>
+			<div class="Ln_box">
+				<input class="Ln_address" placeholder="未设置" ng-model="dhsl" />
+				<p class="Ln_name">订货数量</p>
+			</div>
+			<img src="images/Ln_more.jpg" class="Ln_more" />
+		</li>
+		<li>
+			<div class="Ln_box">
+				<input placeholder="未设置" class="Ln_address" ng-model="dhze" />
+				<p class="Ln_name">订货总额</p>
+			</div>
+			<img src="images/Ln_more.jpg" class="Ln_more" />
+		</li>
+		<li>
+			<div class="Ln_box">
+				<input placeholder="未设置" class="Ln_address" ng-model="dhrq" />
+				<p class="Ln_name">订货日期</p>
+			</div>
+			<img src="images/Ln_more.jpg" class="Ln_more" />
+		</li>
+		<li>
+			<div class="Ln_box">
+				<input value="102600" class="Ln_address" ng-model="jhj" />
+				<p class="Ln_name">进货价</p>
+			</div>
+			<img src="images/Ln_more.jpg" class="Ln_more" />
+		</li>
+	</ul>
+	<div class="Ln_bigbox">
+		<!--<div class="Ln_delete_left">
+			<img src="images/Ln_relete.jpg" />
+			<p>删除</p>
+		</div>-->
+		<button ng-click="tij()">完成</button>
+	</div>
+
+</div>
