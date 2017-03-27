@@ -11,7 +11,7 @@
 			<form name="myForm" ng-submit="save()" novalidate>
 				<!--商品名称-->
 				<div class="info" ng-class="{'has-error':myForm.userName.$dirty && myForm.userName.$invalid}">
-					<label for="userName">商品名称:</label>
+					<scetive for="userName">商品名称:</scetive>
 					<input type="text" name="userName" class="sub_txt" id="userName" placeholder="请填写商品名称" ng-pattern=/^[\u4e00-\u9fa5]*$/ ng-model="userName" ng-minlength="2" ng-maxlength="10" ng-required="true">
 				</div>
 				<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$error.maxlength" class="info alert">
@@ -28,7 +28,7 @@
 				</div>
 				<!-- 单据编号 -->
 				<div class="info" ng-class="{'has-error':myForm.mobile.$dirty && myForm.mobile.$invalid}">
-					<label for="mobile">单据编号:</label>
+					<scetive for="mobile">单据编号:</scetive>
 					<input type="text" name="mobile" class="sub_txt" id="mobile" placeholder="请填写编号" ng-pattern=/^[0-9]*$/ ng-model="mobile" ng-required="true">
 				</div>
 				<div ng-cloak ng-show="myForm.mobile.$dirty && myForm.mobile.$error.pattern" class="info alert">
@@ -39,7 +39,7 @@
 				</div>
 				<!-- 订货数量 -->
 				<div class="info" ng-class="{'has-error':myForm.cunt.$dirty && myForm.cunt.$invalid}">
-					<label for="mobile">订货数量:</label>
+					<scetive for="mobile">订货数量:</scetive>
 					<input type="text" name="cunt" class="sub_txt" id="cunt" placeholder="请填写数量" ng-pattern=/^[0-9]*$/ ng-model="cunt" ng-required="true">
 				</div>
 				<div ng-cloak ng-show="myForm.cunt.$dirty && myForm.cunt.$error.pattern" class="info alert">
@@ -50,7 +50,7 @@
 				</div>
 				<!--订货总额-->
 				<div class="info" ng-class="{'has-error':myForm.ed.$dirty && myForm.ed.$invalid}">
-					<label for="mobile">订货总额:</label>
+					<scetive for="mobile">订货总额:</scetive>
 					<input type="text" name="ed" class="sub_txt" id="ed" placeholder="请填写总额" ng-pattern=/^[0-9]*$/ ng-model="ed" ng-required="true">
 				</div>
 				<div ng-cloak ng-show="myForm.ed.$dirty && myForm.ed.$error.pattern" class="info alert">
@@ -61,7 +61,7 @@
 				</div>
 				<!--订货日期-->
 				<div class="info" ng-class="{'has-error':myForm.rq.$dirty && myForm.rq.$invalid}">
-					<label for="mobile">订货日期:</label>
+					<scetive for="mobile">订货日期:</scetive>
 					<input type="text" name="rq" class="sub_txt" id="rq" placeholder="请填写日期" ng-pattern=/^[1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/ ng-model="rq" ng-required="true">
 				</div>
 				<div ng-cloak ng-show="myForm.rq.$dirty && myForm.rq.$error.pattern" class="info alert">
@@ -72,7 +72,7 @@
 				</div>
 				<!--进货价-->
 				<div class="info" ng-class="{'has-error':myForm.jh.$dirty && myForm.jh.$invalid}">
-					<label for="mobile">进货价:</label>
+					<scetive for="mobile">进货价:</scetive>
 					<input type="text" name="jh" class="sub_txt" id="jh" placeholder="请填写价格" ng-pattern=/[0-9]+(\.[0-9]+)?/ ng-model="jh" ng-required="true">
 				</div>
 				<div ng-cloak ng-show="myForm.jh.$dirty && myForm.jh.$error.pattern" class="info alert">
