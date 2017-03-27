@@ -47,4 +47,8 @@ angular
 			url: "/xiugai",
 			templateUrl: "views/xiugai.html"
 		})
+		.state('xiangqing', {
+			url: "/xiangqing",
+			templateUrl: "views/xiangqing.html"
+		})
 	}])

@@ -8,7 +8,7 @@ angular.module('wangkelongApp')
 			$scope.jhj=localStorage.f;
 			$scope.tij=function(){
 				$http({
-					url:"http://47.88.16.225:409/item/"+localStorage.g,
+					url:"http://47.88.16.225:409/item/" + sessionStorage.aid,
 					method:'post',
 					data:{
 						mingcheng:$scope.spmc,

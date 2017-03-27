@@ -13,56 +13,16 @@
 		</right>
 	</header>
 	<div class="c_box" id="box">
-		<input type="text" placeholder="请输入要搜索的商品" ng-model="kw" />	
+		<input type="text" placeholder="请输入要搜索的商品" ng-model="kw" />
+	</div>	
+	<div class="boxg">
+		<ul class="top left">
+			<li>商品名称</li>	
+			<li>操作</li>
+		</ul>
+		<ul class="bottom left" ng-repeat="a in e | filter:kw">
+			<li>{{a.mingcheng}}</li>
+			<li><button ng-click="cz(a.id)" ui-sref="xiangqing">操作</button></li>
+		</ul>
 	</div>
-
-	<div class="L_spxx">
-		<div class="L_left">
-			<ul>
-				<li>商品名称:</li>
-				<!--<li>单据编号:</li>
-				<li>订货数量:</li>
-				<li>订货总额:</li>
-				<li>订货日期:</li>
-				<li>进货价:</li>
-				<li>送货状态:</li>-->
-			</ul>
-		</div>
-		<div class="L_r" id="L_r">
-			<div class="L_right" id="L_right">
-				<ul ng-repeat="a in data | filter:kw">
-					<li>{{a.mingcheng}}</li>
-					<!--<li>{{a.bianhao}}</li>
-					<li>{{a.shuliang}}</li>
-					<li>{{a.zonge}}</li>
-					<li>{{a.riqi}}</li>
-					<li>{{a.jinjia}}</li>
-					<li>{{a.songhuozhuangtai}}</li>
-					<li><input style="width: 1rem;height: 1rem;outline: none;" type="checkbox" ng-checked ="isChecked(a.id)"   
-            ng-click="updateSelection($event,a.id)" /></li>
-            		<li><button style="width: 2rem;height: 1rem;text-align: center;line-height: 1rem;" ng-click="bianji($index)">编辑</button></li>-->
-				</ul>
-			</div>
-			<!--	    
-	    <div style="width: 100%;height: 2rem;background: url(images/ljc_1.png);clear: both;">
-	    	<button>删除</button>
-	    	<button>修改</button>
-	    	<button>入库</button>
-	    </div>-->
-		</div>
-	</div>
-	<div style="width: 100%;height: 2rem;background: url(images/ljc_1.png);clear: both;position: fixed;bottom: 0;" class="dibu">
-		<button id="button" ng-click="shanchu()">删除</button>
-		<button id="button" ng-click="ruku($event,a.id)">入库</button>
-		<input ng-click="fn()" type="button" value="上一页" id="shangyiye" />
-		<input ng-click="fnn()" type="button" value="下一页" id="xiayiye" />
-	</div>
-	<!--<div class="L_bj">
-				<span ng-click="shanchu()">删除</span><span>编辑</span><span>入库</span>
-		</div>-->
-	<!--<div class="L_cx">								
-				<div class="L_inp"><input type="text" placeholder="请输入内容"/></div>
-				<div class="L_bu"><button>查询</button></div>
-			</div>-->
-</div>
 </div>

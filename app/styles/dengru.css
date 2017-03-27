@@ -1,7 +1,32 @@
 * {
-	margin: 0;
-	padding: 0;
+	margin: 0rem;
+	padding: 0rem;
+}
+img {
+	border: none;
+}
+a {
+	text-decoration: none;
+	border: none;
+}
+ul li {
 	list-style: none;
+}
+.left {
+	float: left;
+	display: inline;
+}
+.right {
+	float: right;
+	display: inline;
+}
+.clear:after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.clear {
+	zoom: 1;
 }
 .kuang {
 	width: 100%;
@@ -41,7 +66,7 @@
 	line-height: 4rem;
 	position: relative;
 	color: #fff;
-}
+}5
 
 .Bugcent b {
 	font-size: 2rem;
@@ -55,16 +80,14 @@
 	color: #333;
 }
 
-.Bugcent1 b {
-	font-size: 2rem;
-	color: #666;
+.Bugcent1 img {
+	width: 4rem;
+	height: 4rem;	
 }
 
 .col-sm-12 {
 	width: 100vw;
 	height: 100vh;
-	background: url(../images/logo.jpg) no-repeat;
-	background-size: cover;
 }
 
 .col-sm-12 button {
