@@ -60,10 +60,10 @@ angular.module('wangkelongApp')
 //			}
 //		}
    $scope.save = function () {
-        var myselect=document.getElementById("company");
-        var index=myselect.selectedIndex ; 
-        var companyVal=myselect.options[index].value;
-        var companyText=myselect.options[index].text;
+//      var myselect=document.getElementById("company");
+//      var index=myselect.selectedIndex ; 
+//      var companyVal=myselect.options[index].value;
+//      var companyText=myselect.options[index].text;
         //获取到表单是否验证通过
         if($scope.myForm.$valid){
             var datajson = {
@@ -73,8 +73,8 @@ angular.module('wangkelongApp')
                 ed:$scope.ed,
                 rq:$scope.rq,
                 jh:$scope.jh,
-                companyVal:companyVal,
-                companyText:companyText
+//              companyVal:companyVal,
+//              companyText:companyText
             }   
             console.log(datajson);
             
