@@ -22,7 +22,4 @@ angular.module('wangkelongApp')
 				$location.url('/xiangqing');
 			})
 		}
-		$scope.bbjj = function(){
-			$location.url('/xiangqing');
-		}
 	})

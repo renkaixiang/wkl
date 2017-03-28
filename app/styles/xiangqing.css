@@ -1,7 +1,7 @@
 .xqbox {
 	width: 100%;
 	height: auto;
-	margin-top: 0.5rem;
+	margin-top: 2rem;
 	float: left;
 }
 .xqbox >ul:nth-child(1) {
