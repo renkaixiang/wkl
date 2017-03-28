@@ -12,7 +12,7 @@
 				<!--商品名称-->
 				<div class="info" ng-class="{'has-error':myForm.userName.$dirty && myForm.userName.$invalid}">
 					<scetive for="userName">商品名称:</scetive>
-					<input type="text" name="userName" class="sub_txt" id="userName" placeholder="请填写商品名称" ng-pattern=/^[\u4e00-\u9fa5]*$/ ng-model="userName" ng-minlength="2" ng-maxlength="10" ng-required="true">
+					<input name="userName" class="sub_txt" id="userName" placeholder="请填写商品名称" ng-pattern=/^[\u4e00-\u9fa5]*$/ ng-model="userName" ng-minlength="2" ng-maxlength="10" ng-required="true">
 				</div>
 				<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$error.maxlength" class="info alert">
 					长度不能超过10位

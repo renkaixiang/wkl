@@ -1,9 +1,9 @@
 
-.sss{
+/*.sss{
 	width: 100vw;
 	height: 100vh;
 	background-color:##091426;
-}
+}*/
 header {
 	width: 100%;
 	height: 2rem;
@@ -62,16 +62,22 @@ active{
 	border:0.025rem solid #999797;
 	overflow: hidden;
 }
-active>ul>p{
-	width:100%;
+active>ul{
+	height:8rem;
+	overflow-y: scroll;
+}
+active>p{
+	width:14.4rem;
 	height:2rem;
 	color:#000000;
 	font-size:0.7rem;
 	line-height: 2rem;
 	font-weight: bold;
-	margin-top:0.025rem;
 	border-bottom: 0.025rem solid #d0cccc;
 	background-color:#ccc8c8;
+	position: fixed;
+	border-radius: 0.225rem;
+	text-indent:0.5rem ;
 }
 active>ul>li{
 	width:13rem;
@@ -80,6 +86,8 @@ active>ul>li{
 	border-bottom: 0.025rem solid #d0cccc;
 	padding-left: 1rem;
 	margin-left:1rem;
+	margin-top: 0.5rem;
+	z-index: 999;
 }
 footer{
 	width:100%;
