@@ -10,7 +10,7 @@
  */
 angular
 	.module('wangkelongApp',["ui.router"]).config(["$stateProvider","$urlRouterProvider",function($stateProvider,$urlRouterProvider){
-		$urlRouterProvider.when("", "/dengru")
+		$urlRouterProvider.when("", "/tianjia")
 		$stateProvider.state('dengru', {
 			url: "/dengru",
 			templateUrl: "views/dengru.html"
