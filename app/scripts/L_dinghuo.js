@@ -17,7 +17,14 @@ angular.module('wangkelongApp')
 			}
 		$scope.cz = function(id) {
 				sessionStorage.aid = id
-			}
+			$http({
+					url: "http://47.88.16.225:409/item"
+				}).then(function(data) {
+					$scope.e = data.data;
+				}),
+				function() {
+					alert("error!")
+				}			
 			//		//xiugai
 			//		$scope.bianji = function($index) {
 			//				localStorage.a = $scope.e[$index].mingcheng
