@@ -15,7 +15,7 @@ angular.module('wangkelongApp')
 					alert("error!")
 				}			
 			$scope.cz = function(id) {
-				sessionStorage.aid=id					
+				localStorage.aid=id					
 			}
 			//		//xiugai
 			//		$scope.bianji = function($index) {

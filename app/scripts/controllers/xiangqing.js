@@ -1,7 +1,6 @@
 angular.module('wangkelongApp')
 	.controller('xiangqing', function($scope, $http, $location) {
 		xq()
-
 		function xq() {
 			//			显示详情
 			$http({
@@ -9,7 +8,7 @@ angular.module('wangkelongApp')
 				}).then(function(data) {
 					$scope.abc = []
 					for(var i = 0; i < data.data.length; i++) {
-						if(data.data[i].id == sessionStorage.aid) {
+						if(data.data[i].id == localStorage.aid) {
 							$scope.abc.push(data.data[i])
 						}
 					}
@@ -28,20 +27,26 @@ angular.module('wangkelongApp')
 		//删除
 		$scope.shanchu = function() {
 				$http({
-					url: "http://47.88.16.225:409/item/" + sessionStorage.aid,
+					url: "http://47.88.16.225:409/item/" + localStorage.aid,
 					method: "delete"
 				}).then(function(d) {
 					$location.url("/dingdan")
 				})
 			}
 			//编辑
-		$scope.bianji = function($index) {
-			localStorage.a = $scope.e[$index].mingcheng
-			localStorage.b = $scope.e[$index].bianhao
-			localStorage.c = $scope.e[$index].shuliang
-			localStorage.d = $scope.e[$index].zonge
-			localStorage.e = $scope.e[$index].riqi
-			localStorage.f = $scope.e[$index].jinjia
-			$location.url("/xiugai")
+		$scope.bianji = function() {
+			$http({
+				url: "http://47.88.16.225:409/item/" + localStorage.aid,
+			}).then(function(data){
+				localStorage.a = data.data.mingcheng
+				localStorage.b = data.data.bianhao
+				localStorage.c = data.data.shuliang
+				localStorage.d = data.data.zonge
+				localStorage.e = data.data.riqi
+				localStorage.f = data.data.jinjia							
+				$location.url("/xiugai")
+			})
+			
+
 		}
 	})
