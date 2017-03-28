@@ -5,7 +5,7 @@ angular.module('wangkelongApp')
 				$scope.show = !$scope.show;
 			}			
 			$scope.tc = function(){
-				$location.url("/dengru")
+				localStorage.clear();
 			}
 			$scope.tj = function(){
 				$location.url("/tianjia")
