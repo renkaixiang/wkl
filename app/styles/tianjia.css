@@ -128,8 +128,9 @@
 }
 .titleTxt,.sub_form{
 width:96%;
+height: 100%;
 padding:2%;
-margin:2.2rem auto;
+margin:2rem auto 0 auto;
 background-color: whitesmoke;
 border-radius: 5px;
 }
