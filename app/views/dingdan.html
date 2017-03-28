@@ -14,15 +14,20 @@
 	</header>
 	<div class="c_box" id="box">
 		<input type="text" placeholder="请输入要搜索的商品" ng-model="kw" />
-	</div>	
-	<div class="boxg">
+	</div>
+	<div class="boxg" >
 		<ul class="top left">
-			<li>商品名称</li>	
+			<li>商品名称</li>
 			<li>操作</li>
 		</ul>
-		<ul class="bottom left" ng-repeat="a in e | filter:kw">
+<ul id="qqq" class="bottom left"  ng-repeat="a in e | filter:kw">
 			<li>{{a.mingcheng}}</li>
 			<li><button ng-click="cz(a.id)" ui-sref="xiangqing">操作</button></li>
 		</ul>
 	</div>
+		<div id="content">
+				<div id="example">
+					<div id="preview"></div>
+				</div>
+		</div>
 </div>
