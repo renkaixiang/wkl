@@ -364,6 +364,15 @@ scetive{
     border: 0px;
 
 }
+.sang_Calender{
+   display: inline-block;
+    width: 70%;
+    height:35px;
+    margin-top:6px;
+    font-size:16px;
+    border: 0px;
+
+}
 .tip-bubble {
   display: block;
     background-color: #1cb596;
