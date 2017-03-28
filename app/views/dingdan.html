@@ -20,9 +20,14 @@
 			<li>商品名称</li>	
 			<li>操作</li>
 		</ul>
-		<ul class="bottom left" ng-repeat="a in e | filter:kw">
+		<ul class="bottom left" ng-repeat="a in e | filter:kw" id="qqq">
 			<li>{{a.mingcheng}}</li>
 			<li><button ng-click="cz(a.id)" ui-sref="xiangqing">操作</button></li>
 		</ul>
+	</div>
+	<div id="content">
+		<div id="example">
+			<div id="preview"></div>
+		</div>
 	</div>
 </div>
