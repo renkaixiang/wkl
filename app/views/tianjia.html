@@ -62,14 +62,14 @@
 				<!--订货日期-->
 				<div class="info" ng-class="{'has-error':myForm.rq.$dirty && myForm.rq.$invalid}">
 					<scetive for="mobile">订货日期:</scetive>
-					<input type="text" name="rq" class="sub_txt" id="rq" placeholder="请填写日期" ng-pattern=/^[1-9]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/ ng-model="rq" ng-required="true">
+					<input type="text" class="sub_txt" class="sang_Calender" placeholder="请填写日期"  ng-model="rq" ng-required="true">
 				</div>
-				<div ng-cloak ng-show="myForm.rq.$dirty && myForm.rq.$error.pattern" class="info alert">
+				<!--<div ng-cloak ng-show="myForm.rq.$dirty && myForm.rq.$error.pattern" class="info alert">
 					格式不对（2014-01-01）
 				</div>
 				<div ng-cloak ng-show="myForm.rq.$dirty && myForm.rq.$invalid &&myForm.rq.$error.required" class="info alert">
 					不能为空
-				</div>
+				</div>-->
 				<!--进货价-->
 				<div class="info" ng-class="{'has-error':myForm.jh.$dirty && myForm.jh.$invalid}">
 					<scetive for="mobile">进货价:</scetive>
