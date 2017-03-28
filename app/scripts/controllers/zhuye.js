@@ -19,4 +19,15 @@ angular.module('wangkelongApp')
 			$scope.xix = function(){
 				$location.url("/dingdan2")
 			}
+			//最新公告
+			$http({
+				url: "http://47.88.16.225:409/item",
+				method: 'get'
+			}).then(function(data){
+				$scope.shops=[];
+				for (var i=0;i<data.data.length;i++) {
+					$scope.shops.unshift(data.data[i])
+				}
+				
+			})
   });
