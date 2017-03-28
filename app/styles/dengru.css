@@ -66,8 +66,7 @@ ul li {
 	line-height: 4rem;
 	position: relative;
 	color: #fff;
-}5
-
+}
 .Bugcent b {
 	font-size: 2rem;
 	color: #fff;
@@ -263,11 +262,6 @@ ul li {
 	color: #333;
 	font-weight: bold;
 }
-
-.form-control {
-	height: auto;
-}
-
 .Button-ln {
 	width: 90%;
 	margin-left: -3rem;
