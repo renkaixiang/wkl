@@ -5,8 +5,9 @@ angular.module('wangkelongApp')
 			//			显示详情
 			$http({
 					url: "http://47.88.16.225:409/item"
-				}).then(function(data) {
+			}).then(function(data) {
 					$scope.abc = []
+					
 					for(var i = 0; i < data.data.length; i++) {
 						if(data.data[i].id == localStorage.aid) {
 							$scope.abc.push(data.data[i])
@@ -39,14 +40,30 @@ angular.module('wangkelongApp')
 				url: "http://47.88.16.225:409/item/" + localStorage.aid,
 			}).then(function(data){
 				localStorage.a = data.data.mingcheng
-				localStorage.b = data.data.bianhao
+				localStorage.b = data.data.bianhao.
 				localStorage.c = data.data.shuliang
 				localStorage.d = data.data.zonge
 				localStorage.e = data.data.riqi
 				localStorage.f = data.data.jinjia							
 				$location.url("/xiugai")
+			})			
+		}
+		//入库
+		$scope.ruku = function(){
+			$http({
+				url: "http://47.88.16.225:409/item/" + localStorage.aid,
+				method: 'post',
+				data:{
+					mingcheng: $scope.mingcheng,
+					bianhao: $scope.bianhao,
+					shuliang: $scope.shuliang,
+					zonge: $scope.zonge,
+					riqi: $scope.riqi,
+					jinjia: $scope.jinjia,
+					songhuozhuangtai: 1
+				}
+			}).then(function(data){
+				$location.url("/ruku")
 			})
-			
-
 		}
 	})

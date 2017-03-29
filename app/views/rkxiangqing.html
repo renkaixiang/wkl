@@ -1,8 +1,8 @@
-<div ng-controller="xiangqing">
+<div ng-controller="rkxiangqing">
 	<div class="Ln-Head">
 		<div class="Ln-Left">
-			<a href="javascript:;" ui-sref="dingdan"><img src="images/ljc_3.png"/></a>
-			订单详情
+			<a href="javascript:;" ui-sref="ruku"><img src="images/ljc_3.png"/></a>
+			入库详情
 		</div>
 	</div>
 	<div class="xqbox">
@@ -26,8 +26,6 @@
 		</ul>
 	</div>
 	<div class="xqfoole">
-		<button ng-click="bianji()">编辑</button>
-		<button ng-click="shanchu()">删除</button>
-		<button ng-click="ruku()">入库</button>
+		<button ng-click="chuku()" ui-sref="ruku">退货</button>
 	</div>
 </div>

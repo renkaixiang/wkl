@@ -41,9 +41,9 @@ angular.module('wangkelongApp')
 					rq: $scope.rq,
 					jh: $scope.jh,
 				}
-				$scope.ss = function() {
-					$location.url("/zhuye")
-				}
 			}
+		}
+		$scope.ss = function() {
+			$location.url("/zhuye")
 		}
 	});
