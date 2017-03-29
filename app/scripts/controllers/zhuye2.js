@@ -1,39 +1,27 @@
 angular.module('wangkelongApp')
-	.controller('ruku', function($scope, $http, $location, $state) {
+	.controller('zhuye2Ctrl', function($scope, $location, $http, $state) {
+		$scope.show = false;
 		$scope.dj = function() {
-			$scope.show = !$scope.show;
-		}
+				$scope.show = !$scope.show;
+			}
+		var content = document.getElementById("content")
+			//最新公告
 		if(sessionStorage.qw) {
 			$http({
-					url: "http://47.88.16.225:409/item"
-				}).then(function(data) {
-					$scope.rushops = [];
-					for(var k = 0; k < data.data.length; k++) {
-						if(data.data[k].songhuozhuangtai == 1) {
-							$scope.rushops.push(data.data[k])
-						}
-					}
-					$scope.e = $scope.rushops;
-					content.style.display = "none"
-					for(var i = 0; i < $scope.e.length; i++) {
-						if($scope.e[i].songhuozhuangtai == "0") {
-							$scope.e[i].songhuozhuangtai = "未配送"
-						} else {
-							$scope.e[i].songhuozhuangtai = "配送"
-						}
-					}
-				}),
-				function() {
-					alert("error!")
+				url: "http://47.88.16.225:409/item",
+				method: 'get'
+			}).then(function(data) {
+				$scope.shops = [];
+				content.style.display = "none"
+				for(var i = 0; i < data.data.length; i++) {
+					$scope.shops.unshift(data.data[i])
 				}
+			})
 		} else {
 			$state.go("dengru")
 			alert("请先登录！")
 		}
-		$scope.cz = function(id) {
-				localStorage.aid = id
-			}
-			//加载效果
+
 		$.fn.spin = function(opts) {
 			this.each(function() {
 				var $this = $(this),
@@ -90,4 +78,8 @@ angular.module('wangkelongApp')
 			});
 			update();
 		});
-	})
+		$scope.tuichu = function() {
+			$state.go("dengru")
+			localStorage.clear()
+		}
+	});

@@ -1,32 +1,36 @@
 angular.module('wangkelongApp')
-	.controller('zhuyeCtrl', function($scope, $location, $http) {
+	.controller('zhuye', function($scope, $location, $http, $state) {
 		$scope.show = false;
 		$scope.dj = function() {
 			$scope.show = !$scope.show;
 		}
+		var content = document.getElementById("content")
 			//最新公告
-		$http({
-			url: "http://47.88.16.225:409/item",
-			method: 'get'
-		}).then(function(data) {
-			$scope.shops = [];
-			content.style.display = "none"
-			for(var i = 0; i < data.data.length; i++) {
-				$scope.shops.unshift(data.data[i])
-			}
-		})
-		
-		
-		
+		if(sessionStorage.qw) {
+			$http({
+				url: "http://47.88.16.225:409/item",
+				method: 'get'
+			}).then(function(data) {
+				$scope.shops = [];
+				content.style.display = "none"
+				for(var i = 0; i < data.data.length; i++) {
+					$scope.shops.unshift(data.data[i])
+				}
+			})
+		} else {
+			$state.go("dengru")
+			alert("请先登录！")
+		}
+
 		$.fn.spin = function(opts) {
 			this.each(function() {
 				var $this = $(this),
 					data = $this.data();
-				if (data.spinner) {
+				if(data.spinner) {
 					data.spinner.stop();
 					delete data.spinner;
 				}
-				if (opts !== false) {
+				if(opts !== false) {
 					data.spinner = new Spinner($.extend({
 						color: $this.css('color')
 					}, opts)).spin(this);
@@ -46,14 +50,14 @@ angular.module('wangkelongApp')
 				$('#opt-' + this.name).text(this.checked);
 			});
 			$('#preview').spin(opts);
-			if ($('#share').is(':checked')) {
+			if($('#share').is(':checked')) {
 				window.location.replace('#?' + $('form').serialize());
 			}
 		}
 		$(function() {
 			var params = {};
 			var hash = /^#\?(.*)/.exec(location.hash);
-			if (hash) {
+			if(hash) {
 				$('#share').prop('checked', true);
 				$.each(hash[1].split(/&/), function(i, pair) {
 					var kv = pair.split(/=/);
@@ -62,7 +66,7 @@ angular.module('wangkelongApp')
 			}
 			$('#opts input[min]').each(function() {
 				var val = params[this.name];
-				if (val !== undefined) this.value = val;
+				if(val !== undefined) this.value = val;
 				this.onchange = update;
 			});
 			$('#opts input:checkbox').each(function() {
@@ -74,4 +78,9 @@ angular.module('wangkelongApp')
 			});
 			update();
 		});
+
+		$scope.tuichu = function() {
+			$state.go("dengru")
+			localStorage.clear()
+		}
 	});
