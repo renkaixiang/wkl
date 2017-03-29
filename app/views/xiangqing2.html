@@ -1,0 +1,28 @@
+<div ng-controller="xiangqing2">
+	<div class="Ln-Head">
+		<div class="Ln-Left">
+			<a href="javascript:;" ui-sref="dingdan2"><img src="images/ljc_3.png"/></a>
+			订单详情
+		</div>
+	</div>
+	<div class="xqbox">
+		<ul>
+			<li>商品名称</li>
+			<li>单据编号</li>
+			<li>订货数量</li>
+			<li>订货总额</li>
+			<li>订货日期</li>
+			<li>进货价</li>
+			<li>送货状态</li>
+		</ul>
+		<ul ng-repeat="b in abc">
+			<li class="a">{{b.mingcheng}}</li>
+			<li>{{b.bianhao}}</li>
+			<li>{{b.shuliang}}</li>
+			<li>{{b.zonge}}</li>
+			<li>{{b.riqi}}</li>
+			<li>{{b.jinjia}}</li>
+			<li>{{b.songhuozhuangtai}}</li>
+		</ul>
+	</div>
+</div>

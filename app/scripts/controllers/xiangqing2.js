@@ -1,5 +1,6 @@
 angular.module('wangkelongApp')
-	.controller('xiangqing', function($scope, $http, $location,$state) {
+	.controller('xiangqing2', function($scope, $http, $location, $state) {
+
 			//			显示详情
 			if(sessionStorage.qw) {
 				$http({

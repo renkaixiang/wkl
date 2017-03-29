@@ -1,25 +1,21 @@
 angular.module('wangkelongApp')
-	.controller('ruku', function($scope, $http, $location, $state) {
+	.controller('dingdan', function($scope, $http, $location, $state) {
+		$scope.e = [];
+		$scope.show = false;
 		$scope.dj = function() {
-			$scope.show = !$scope.show;
-		}
+				$scope.show = !$scope.show;
+			}
+			//显示详情
 		if(sessionStorage.qw) {
 			$http({
 					url: "http://47.88.16.225:409/item"
 				}).then(function(data) {
-					$scope.rushops = [];
-					for(var k = 0; k < data.data.length; k++) {
-						if(data.data[k].songhuozhuangtai == 1) {
-							$scope.rushops.push(data.data[k])
-						}
-					}
-					$scope.e = $scope.rushops;
+					$scope.bcd = [];
+					$scope.e = data.data;
 					content.style.display = "none"
-					for(var i = 0; i < $scope.e.length; i++) {
-						if($scope.e[i].songhuozhuangtai == "0") {
-							$scope.e[i].songhuozhuangtai = "未配送"
-						} else {
-							$scope.e[i].songhuozhuangtai = "配送"
+					for(i = 0; i < data.data.length; i++) {
+						if(data.data[i].songhuozhuangtai == "0") {
+							$scope.bcd.push(data.data[i])
 						}
 					}
 				}),
@@ -31,9 +27,8 @@ angular.module('wangkelongApp')
 			alert("请先登录！")
 		}
 		$scope.cz = function(id) {
-				localStorage.aid = id
-			}
-			//加载效果
+			localStorage.aid = id
+		}
 		$.fn.spin = function(opts) {
 			this.each(function() {
 				var $this = $(this),

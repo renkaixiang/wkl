@@ -1,5 +1,5 @@
 angular.module('wangkelongApp')
-	.controller('tianjiaCtrl', function($scope, $http, $location) {
+	.controller('tianjiaCtrl', function($scope, $http, $location,$state) {
 		$scope.tij = function() {
 			var spmc = $scope.userName
 			var djbh = $scope.mobile
@@ -7,6 +7,7 @@ angular.module('wangkelongApp')
 			var dhze = $scope.ed
 			var dhrq = $scope.rq
 			var jhj = $scope.jh
+		if(sessionStorage.qw){
 			$http({
 				url: "http://47.88.16.225:409/item",
 				method: 'post',
@@ -29,7 +30,10 @@ angular.module('wangkelongApp')
 				}
 				}, function() {
 					alert('error')
-			})
+			})}else{
+				$state.go("dengru")
+				alert("请先登录！")
+			}
 		}
 		$scope.save = function() {
 			if($scope.myForm.$valid) {
@@ -42,8 +46,5 @@ angular.module('wangkelongApp')
 					jh: $scope.jh,
 				}
 			}
-		}
-		$scope.ss = function() {
-			$location.url("/zhuye")
 		}
 	});

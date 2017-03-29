@@ -1,12 +1,13 @@
 angular.module('wangkelongApp')
-	.controller('dingdan', function($scope, $http, $location) {
+	.controller('dingdan2', function($scope, $http, $location, $state) {
 		$scope.e = [];
 		$scope.show = false;
 		$scope.dj = function() {
 				$scope.show = !$scope.show;
 			}
 			//显示详情
-			$http({
+			if (sessionStorage.qw) {
+				$http({
 					url: "http://47.88.16.225:409/item"
 				}).then(function(data) {
 					$scope.bcd=[];
@@ -21,19 +22,15 @@ angular.module('wangkelongApp')
 				}),
 				function() {
 					alert("error!")
-				}			
+				}
+			} else {
+				$state.go("dengru")
+				alert("请先登录！")
+			}
+						
 			$scope.cz = function(id) {
 				localStorage.aid=id					
-			}
-		$scope.ssy = function() {
-			$location.url('/zhuye')
-		}
-		$scope.rrk = function() {
-			$location.url('/ruku')
-		}
-		$scope.ttc = function() {
-			$location.url("/dengru")
-		}				
+			}				
 		$.fn.spin = function(opts) {
 			this.each(function() {
 				var $this = $(this),

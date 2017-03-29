@@ -51,6 +51,10 @@ angular
 			url: "/xiangqing",
 			templateUrl: "views/xiangqing.html"
 		})
+		.state('xiangqing2', {
+			url: "/xiangqing2",
+			templateUrl: "views/xiangqing2.html"
+		})
 		.state('rkxiangqing', {
 			url: "/rkxiangqing",
 			templateUrl: "views/rkxiangqing.html"

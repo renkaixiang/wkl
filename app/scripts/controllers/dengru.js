@@ -13,6 +13,7 @@ angular
 	.module("wangkelongApp").controller("dengru", ["$rootScope", "$scope", "$http", "$state", "$interval", "$timeout", "$location", function($rootScope, $scope, $http, $state, $interval, $timeout, $location) {
 		$scope.updata = {}
 		$scope.check = false
+		sessionStorage.clear()
 			//获取cookie
 		function getcookie(objname) {
 			var str = document.cookie.split("; ");
@@ -68,6 +69,7 @@ angular
 						url: "http://47.88.16.225:409/users/" + $scope.uid,
 						method: "get"
 					}).then(function(e) {
+						sessionStorage.qw = 3;
 						if(e.data.juese == 0) {
 							localStorage.uid=$scope.uid;
 							$location.url("/zhuye")
