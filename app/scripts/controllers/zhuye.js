@@ -1,5 +1,5 @@
 angular.module('wangkelongApp')
-	.controller('zhuyeCtrl', function($scope, $location, $http, $state) {
+	.controller('zhuye', function($scope, $location, $http, $state) {
 		$scope.show = false;
 		$scope.dj = function() {
 			$scope.show = !$scope.show;
