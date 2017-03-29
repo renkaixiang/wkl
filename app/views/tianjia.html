@@ -2,90 +2,95 @@
 	<!--head-->
 	<div class="Ln-Head">
 		<div class="Ln-Left">
-			<a href="javascript:;" ng-click="ss()"><img src="images/ljc_3.png"/></a>
+			<a href="javascript:;" ng-click="ss()"><img src="images/ljc_3.png" /></a>
 			添加订单管理
 		</div>
 	</div>
 	<!--body-->
 	<div class="sub_form">
-			<form name="myForm" ng-submit="save()" novalidate>
-				<!--商品名称-->
-				<div class="info" ng-class="{'has-error':myForm.userName.$dirty && myForm.userName.$invalid}">
-					<scetive for="userName">商品名称:</scetive>
-					<input name="userName" class="sub_txt" id="userName" placeholder="请填写商品名称" ng-pattern=/^[\u4e00-\u9fa5]*$/ ng-model="userName" ng-minlength="2" ng-maxlength="10" ng-required="true">
-				</div>
-				<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$error.maxlength" class="info alert">
-					长度不能超过10位
-				</div>
-				<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$error.minlength" class="info alert">
-					用户名长度不能小于2位
-				</div>
-				<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$error.pattern" class="info alert">
-					用户名不符合中文
-				</div>
-				<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$invalid &&myForm.userName.$error.required" class="info alert">
-					用户名不能为空
-				</div>
-				<!-- 单据编号 -->
-				<div class="info" ng-class="{'has-error':myForm.mobile.$dirty && myForm.mobile.$invalid}">
-					<scetive for="mobile">单据编号:</scetive>
-					<input type="text" name="mobile" class="sub_txt" id="mobile" placeholder="请填写编号" ng-pattern=/^[0-9]*$/ ng-model="mobile" ng-required="true">
-				</div>
-				<div ng-cloak ng-show="myForm.mobile.$dirty && myForm.mobile.$error.pattern" class="info alert">
-					必须为数字
-				</div>
-				<div ng-cloak ng-show="myForm.mobile.$dirty && myForm.mobile.$invalid &&myForm.mobile.$error.required" class="info alert">
-					不能为空
-				</div>
-				<!-- 订货数量 -->
-				<div class="info" ng-class="{'has-error':myForm.cunt.$dirty && myForm.cunt.$invalid}">
-					<scetive for="mobile">订货数量:</scetive>
-					<input type="text" name="cunt" class="sub_txt" id="cunt" placeholder="请填写数量" ng-pattern=/^[0-9]*$/ ng-model="cunt" ng-required="true">
-				</div>
-				<div ng-cloak ng-show="myForm.cunt.$dirty && myForm.cunt.$error.pattern" class="info alert">
-					必须为数字
-				</div>
-				<div ng-cloak ng-show="myForm.cunt.$dirty && myForm.cunt.$invalid &&myForm.cunt.$error.required" class="info alert">
-					不能为空
-				</div>
-				<!--订货总额-->
-				<div class="info" ng-class="{'has-error':myForm.ed.$dirty && myForm.ed.$invalid}">
-					<scetive for="mobile">订货总额:</scetive>
-					<input type="text" name="ed" class="sub_txt" id="ed" placeholder="请填写总额" ng-pattern=/^[0-9]*$/ ng-model="ed" ng-required="true">
-				</div>
-				<div ng-cloak ng-show="myForm.ed.$dirty && myForm.ed.$error.pattern" class="info alert">
-					必须为数字
-				</div>
-				<div ng-cloak ng-show="myForm.ed.$dirty && myForm.ed.$invalid &&myForm.ed.$error.required" class="info alert">
-					不能为空
-				</div>
-				<!--订货日期-->
-				<div class="info" ng-class="{'has-error':myForm.rq.$dirty && myForm.rq.$invalid}">
-					<scetive for="mobile">订货日期:</scetive>
-					<input type="text" class="sub_txt" class="sang_Calender" placeholder="请填写日期"  ng-model="rq" ng-required="true">
-				</div>
-				<!--<div ng-cloak ng-show="myForm.rq.$dirty && myForm.rq.$error.pattern" class="info alert">
+		<form name="myForm" ng-submit="save()" novalidate>
+			<!--商品名称-->
+			<div class="info" ng-class="{'has-error':myForm.userName.$dirty && myForm.userName.$invalid}">
+				<scetive for="userName">商品名称:</scetive>
+				<input name="userName" class="sub_txt" id="userName" placeholder="请填写商品名称" ng-pattern=/^[\u4e00-\u9fa5]*$/ ng-model="userName" ng-minlength="2" ng-maxlength="10" ng-required="true">
+			</div>
+			<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$error.maxlength" class="info alert">
+				长度不能超过10位
+			</div>
+			<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$error.minlength" class="info alert">
+				用户名长度不能小于2位
+			</div>
+			<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$error.pattern" class="info alert">
+				用户名不符合中文
+			</div>
+			<div ng-cloak ng-show="myForm.userName.$dirty && myForm.userName.$invalid &&myForm.userName.$error.required" class="info alert">
+				用户名不能为空
+			</div>
+			<!-- 单据编号 -->
+			<div class="info" ng-class="{'has-error':myForm.mobile.$dirty && myForm.mobile.$invalid}">
+				<scetive for="mobile">单据编号:</scetive>
+				<input type="text" name="mobile" class="sub_txt" id="mobile" placeholder="请填写编号" ng-pattern=/^[0-9]*$/ ng-model="mobile" ng-required="true">
+			</div>
+			<div ng-cloak ng-show="myForm.mobile.$dirty && myForm.mobile.$error.pattern" class="info alert">
+				必须为数字
+			</div>
+			<div ng-cloak ng-show="myForm.mobile.$dirty && myForm.mobile.$invalid &&myForm.mobile.$error.required" class="info alert">
+				不能为空
+			</div>
+			<!-- 订货数量 -->
+			<div class="info" ng-class="{'has-error':myForm.cunt.$dirty && myForm.cunt.$invalid}">
+				<scetive for="mobile">订货数量:</scetive>
+				<input type="text" name="cunt" class="sub_txt" id="cunt" placeholder="请填写数量" ng-pattern=/^[0-9]*$/ ng-model="cunt" ng-required="true">
+			</div>
+			<div ng-cloak ng-show="myForm.cunt.$dirty && myForm.cunt.$error.pattern" class="info alert">
+				必须为数字
+			</div>
+			<div ng-cloak ng-show="myForm.cunt.$dirty && myForm.cunt.$invalid &&myForm.cunt.$error.required" class="info alert">
+				不能为空
+			</div>
+			<!--订货总额-->
+			<div class="info" ng-class="{'has-error':myForm.ed.$dirty && myForm.ed.$invalid}">
+				<scetive for="mobile">订货总额:</scetive>
+				<input type="text" name="ed" class="sub_txt" id="ed" placeholder="请填写总额" ng-pattern=/^[0-9]*$/ ng-model="ed" ng-required="true">
+			</div>
+			<div ng-cloak ng-show="myForm.ed.$dirty && myForm.ed.$error.pattern" class="info alert">
+				必须为数字
+			</div>
+			<div ng-cloak ng-show="myForm.ed.$dirty && myForm.ed.$invalid &&myForm.ed.$error.required" class="info alert">
+				不能为空
+			</div>
+			<!--订货日期-->
+			<div class="info" ng-class="{'has-error':myForm.rq.$dirty && myForm.rq.$invalid}">
+				<scetive for="mobile">订货日期:</scetive>
+				<input type="text" class="sub_txt" class="sang_Calender" placeholder="请填写日期" ng-model="rq" ng-required="true">
+			</div>
+			<!--<div ng-cloak ng-show="myForm.rq.$dirty && myForm.rq.$error.pattern" class="info alert">
 					格式不对（2014-01-01）
 				</div>
 				<div ng-cloak ng-show="myForm.rq.$dirty && myForm.rq.$invalid &&myForm.rq.$error.required" class="info alert">
 					不能为空
 				</div>-->
-				<!--进货价-->
-				<div class="info" ng-class="{'has-error':myForm.jh.$dirty && myForm.jh.$invalid}">
-					<scetive for="mobile">进货价:</scetive>
-					<input type="text" name="jh" class="sub_txt" id="jh" placeholder="请填写价格" ng-pattern=/[0-9]+(\.[0-9]+)?/ ng-model="jh" ng-required="true">
-				</div>
-				<div ng-cloak ng-show="myForm.jh.$dirty && myForm.jh.$error.pattern" class="info alert">
-					格式不对
-				</div>
-				<div ng-cloak ng-show="myForm.jh.$dirty && myForm.jh.$invalid &&myForm.jh.$error.required" class="info alert">
-					不能为空
-				</div>
-				<div class="btn_submit">
-					<input type="submit" class="submit" ng-disabled="myForm.$invalid" ng-click="tij()">
-				</div>
-			
-				
-			</form>
+			<!--进货价-->
+			<div class="info" ng-class="{'has-error':myForm.jh.$dirty && myForm.jh.$invalid}">
+				<scetive for="mobile">进货价:</scetive>
+				<input type="text" name="jh" class="sub_txt" id="jh" placeholder="请填写价格" ng-pattern=/[0-9]+(\.[0-9]+)?/ ng-model="jh" ng-required="true">
+			</div>
+			<div ng-cloak ng-show="myForm.jh.$dirty && myForm.jh.$error.pattern" class="info alert">
+				格式不对
+			</div>
+			<div ng-cloak ng-show="myForm.jh.$dirty && myForm.jh.$invalid &&myForm.jh.$error.required" class="info alert">
+				不能为空
+			</div>
+			<div class="btn_submit">
+				<input type="submit" class="submit" ng-disabled="myForm.$invalid" ng-click="tij()">
+			</div>
+
+		</form>
+	</div>
+	<div class="kuang2" ng-show="isShow2">
+		<div>
+			<p>{{goto}}</p>
+			<button ng-click="qd()">确定</button>
 		</div>
+	</div>
 </div>

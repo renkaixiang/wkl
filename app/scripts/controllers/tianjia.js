@@ -22,7 +22,11 @@ angular.module('wangkelongApp')
 					uid: localStorage.uid
 				}
 			}).then(function(data) {
-				
+				$scope.isShow2 = true;
+				$scope.goto = "提交成功!"
+				$scope.qd = function() {
+					$scope.isShow2 = false;
+				}
 				}, function() {
 					alert('error')
 			})
