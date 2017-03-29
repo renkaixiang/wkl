@@ -3,22 +3,18 @@ angular.module('wangkelongApp')
 		$scope.dj = function() {
 			$scope.show = !$scope.show;
 		}
-		
 		$http({
-				url: "http://47.88.16.225:409/item"
-		}).then(function(data) {
-				$scope.rushops=[];
-				for(var k=0;k<data.data.length;k++){
-					if(data.data[k].classify==1){
+			url: "http://47.88.16.225:409/item"
+			}).then(function(data) {
+				$scope.rushops = [];
+				for(var k = 0; k < data.data.length; k++) {
+					if(data.data[k].songhuozhuangtai == 1) {
 						$scope.rushops.push(data.data[k])
 					}
 				}
 				$scope.e = $scope.rushops;
-
-				$scope.fnn();
-
+				content.style.display = "none"
 				for(var i = 0; i < $scope.e.length; i++) {
-					//				alert($scope.e.length)
 					if($scope.e[i].songhuozhuangtai == "0") {
 						$scope.e[i].songhuozhuangtai = "未配送"
 					} else {
@@ -29,79 +25,63 @@ angular.module('wangkelongApp')
 			function() {
 				alert("error!")
 			}
-			
-			
-			
-			$scope.s = 0;
-		$scope.fnn = function() {
-			$scope.s++;
-			$scope.num = $scope.e.length;
-			$scope.page = Math.ceil($scope.num / 3);
-			if($scope.s == $scope.page + 1) {
-				$scope.s--;
-				return;
+			$scope.cz = function(id) {
+				localStorage.aid=id					
 			}
-			$scope.data = $scope.e.slice(($scope.s - 1) * 3, (($scope.s - 1) * 3) + 3);
-		}
-		$scope.fn = function() {
-			$scope.s--;
-			$scope.num = $scope.e.length;
-			$scope.page = Math.ceil($scope.num / 3);
-			if($scope.s <= 0) {
-				$scope.s++;
-				return;
-			}
-			$scope.data = $scope.e.slice(($scope.s - 1) * 3, (($scope.s - 1) * 3) + 3);
-		}
-		$scope.$watch("kw", function() {
-			if($scope.kw) {
-				$http({
-						url: "http://47.88.16.225:409/item"
-					}).then(function(data) {
-
-						$scope.data = data.data
-					}),
-					function() {
-						alert("error!")
-					}
-			}
-		})
-		
-		
-		
-		
-		b();
-		function b(){
-//		$scope.isChecked = function(id) {
-//			return $scope.selected.indexOf(id)>= 0;
-//		};
-
-		$scope.updateSelection = function($event,id) {
-			var checkbox = $event.target;
-			var checked = checkbox.checked;
-			if(checked) {				
-				$scope.aa=id; 
-			} else {
-				$scope.selected.push(id);
-			}
+			//加载效果
+			$.fn.spin = function(opts) {
+			this.each(function() {
+				var $this = $(this),
+					data = $this.data();
+				if (data.spinner) {
+					data.spinner.stop();
+					delete data.spinner;
+				}
+				if (opts !== false) {
+					data.spinner = new Spinner($.extend({
+						color: $this.css('color')
+					}, opts)).spin(this);
+				}
+			});
+			return this;
 		};
+		prettyPrint();
+		function update() {
+			var opts = {};
+			$('#opts input[min]').each(function() {
+				$('#opt-' + this.name).text(opts[this.name] = parseFloat(this.value));
+			});
+			$('#opts input:checkbox').each(function() {
+				opts[this.name] = this.checked;
+				$('#opt-' + this.name).text(this.checked);
+			});
+			$('#preview').spin(opts);
+			if ($('#share').is(':checked')) {
+				window.location.replace('#?' + $('form').serialize());
+			}
 		}
-		$scope.tuihuo = function(){
-			$http({
-				url:"http://47.88.16.225:409/item/"+$scope.aa,
-				method: 'delete'
-			}).then(function(){
-				location.reload();
-			})
-		}
-		
-		$scope.syy = function(){
-			$location.url("/zhuye")
-		}
-		$scope.dhh = function(){
-			$location.url("/dingdan")
-		}
-		$scope.tcc = function(){
-			$location.url("/dengru")
-		}
+		$(function() {
+			var params = {};
+			var hash = /^#\?(.*)/.exec(location.hash);
+			if (hash) {
+				$('#share').prop('checked', true);
+				$.each(hash[1].split(/&/), function(i, pair) {
+					var kv = pair.split(/=/);
+					params[kv[0]] = kv[kv.length - 1];
+				});
+			}
+			$('#opts input[min]').each(function() {
+				var val = params[this.name];
+				if (val !== undefined) this.value = val;
+				this.onchange = update;
+			});
+			$('#opts input:checkbox').each(function() {
+				this.checked = !!params[this.name];
+				this.onclick = update;
+			});
+			$('#share').click(function() {
+				window.location.replace(this.checked ? '#?' + $('form').serialize() : '#!');
+			});
+			update();
+		});
 	})
