@@ -1,5 +1,7 @@
 angular.module('wangkelongApp')
 	.controller('tianjiaCtrl', function($scope, $http, $location) {
+		    
+			
 		$scope.tij = function() {
 			var spmc = $scope.userName
 			var djbh = $scope.mobile
@@ -7,7 +9,15 @@ angular.module('wangkelongApp')
 			var dhze = $scope.ed
 			var dhrq = $scope.rq
 			var jhj = $scope.jh
-			$http({
+				
+			if ($scope.mobile==null || $scope.cunt==null || $scope.ed==null || $scope.userName==null || $scope.rq==null || $scope.jh==null) {
+				$scope.isShow2 = true;
+				$scope.goto = "都为必填项!";
+				$scope.qd = function() {
+					$scope.isShow2 = false;
+				}
+			} else{
+				$http({
 				url: "http://47.88.16.225:409/item",
 				method: 'post',
 				data: {
@@ -26,11 +36,16 @@ angular.module('wangkelongApp')
 				$scope.goto = "提交成功!"
 				$scope.qd = function() {
 					$scope.isShow2 = false;
+					$location.url("/dingdan")
 				}
-				}, function() {
-					alert('error')
-			})
+				})
+			}
+			
+			
 		}
+
+				
+
 		$scope.save = function() {
 			if($scope.myForm.$valid) {
 				var datajson = {
@@ -41,6 +56,8 @@ angular.module('wangkelongApp')
 					rq: $scope.rq,
 					jh: $scope.jh,
 				}
+			}else{
+				
 			}
 		}
 		$scope.ss = function() {
