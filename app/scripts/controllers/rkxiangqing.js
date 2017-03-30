@@ -4,6 +4,7 @@ angular.module('wangkelongApp')
 
 		function xq() {
 			if(sessionStorage.qw) {
+				//			显示详情
 				$http({
 						url: "http://47.88.16.225:409/item"
 					}).then(function(data) {
@@ -25,11 +26,13 @@ angular.module('wangkelongApp')
 						alert("error!")
 					}
 			} else {
-				$state.go("dengru")
-				alert("请先登录！")
-			}
-			//			显示详情
-
+				$scope.isShow = true
+				$scope.go = "请先登录!"
+				$scope.queding = function() {
+					$scope.isShow = false
+					$state.go("dengru")
+				}
+			}			
 		}
 		//出库
 		$scope.chuku = function() {

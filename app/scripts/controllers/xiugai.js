@@ -23,8 +23,12 @@ angular.module('wangkelongApp')
 					$location.url('/xiangqing');
 				})
 			} else {
-				$state.go("dengru")
-				alert("请先登录！")
+				$scope.isShow = true
+				$scope.go = "请先登录!"
+				$scope.queding = function() {
+					$scope.isShow = false
+					$state.go("dengru")
+				}
 			}
 
 		}
