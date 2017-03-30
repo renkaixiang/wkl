@@ -1,6 +1,5 @@
 'use strict';
 
-
 /**
  * @ngdoc overview
  * @name shixun1App
@@ -69,11 +68,13 @@ angular
 						url: "http://47.88.16.225:409/users/" + $scope.uid,
 						method: "get"
 					}).then(function(e) {
-						sessionStorage.qw = 3;
+						
 						if(e.data.juese == 0) {
 							localStorage.uid=$scope.uid;
+							sessionStorage.qw = 3;
 							$location.url("/zhuye")
 						} else if(e.data.juese == 1) {
+							sessionStorage.qe = 4;
 							$location.url("/zhuye2")
 						}
 					})
