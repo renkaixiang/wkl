@@ -1,6 +1,6 @@
 angular.module('wangkelongApp')
 
-.controller('tianjiaCtrl', function($scope, $http, $location) {
+.controller('tianjiaCtrl', function($scope, $http, $location,$state) {
 
 			$scope.tij = function() {
 				var spmc = $scope.userName
