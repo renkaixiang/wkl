@@ -1,4 +1,6 @@
 angular.module('wangkelongApp')
+
+
 	.controller('tianjiaCtrl', function($scope, $http, $location, $state) {
 		if(sessionStorage.qw) {
 			$scope.tij = function() {
