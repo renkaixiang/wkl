@@ -13,15 +13,15 @@ angular.module('wangkelongApp')
 					$scope.bcd = [];
 					$scope.e = data.data;
 					content.style.display = "none"
-					for(i = 0; i < data.data.length; i++) {
-						if(data.data[i].songhuozhuangtai == "0") {
-							$scope.bcd.push(data.data[i])
+					for(var a = 0; a < data.data.length; a++) {
+						if(data.data[a].songhuozhuangtai == "0") {
+							$scope.bcd.push(data.data[a])
 						}
 					}
-				}),
-				function() {
+				},function() {
 					alert("error!")
-				}
+				})
+				
 			$.fn.spin = function(opts) {
 				this.each(function() {
 					var $this = $(this),
@@ -59,7 +59,7 @@ angular.module('wangkelongApp')
 				var hash = /^#\?(.*)/.exec(location.hash);
 				if(hash) {
 					$('#share').prop('checked', true);
-					$.each(hash[1].split(/&/), function(i, pair) {
+					$.each(hash[1].split(/&/), function(pair) {
 						var kv = pair.split(/=/);
 						params[kv[0]] = kv[kv.length - 1];
 					});

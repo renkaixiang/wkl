@@ -18,10 +18,10 @@ angular.module('wangkelongApp')
 							data.data[i].songhuozhuangtai = "配送"
 						}
 					}
-				}),
-				function() {
+				},function() {
 					alert("error!")
-				}
+				})
+				
 		} else {
 			$scope.isShow = true
 			$scope.go = "请先登录!"

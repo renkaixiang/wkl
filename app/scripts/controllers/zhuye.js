@@ -54,7 +54,7 @@ angular.module('wangkelongApp')
 				var hash = /^#\?(.*)/.exec(location.hash);
 				if(hash) {
 					$('#share').prop('checked', true);
-					$.each(hash[1].split(/&/), function(i, pair) {
+					$.each(hash[1].split(/&/), function(pair) {
 						var kv = pair.split(/=/);
 						params[kv[0]] = kv[kv.length - 1];
 					});
